@@ -1,0 +1,10 @@
+
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_vat %}
+    <div class="footer-vat">
+    <p style="color:{{context.salesChannel.customFields.footer_copy_right_color |default('#eb4034')}}" >
+        {{ context.salesChannel.customFields.footer_copy_right_text | default('Copyright © signundsinn GmbH') |trans|sw_sanitize }}
+      </p>
+    </div>
+{% endblock %}

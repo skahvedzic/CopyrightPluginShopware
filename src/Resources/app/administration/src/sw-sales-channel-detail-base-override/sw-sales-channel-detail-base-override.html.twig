@@ -1,0 +1,43 @@
+    {% block sw_sales_channel_detail_base_general %}
+
+        {% block sw_sales_channel_detail_base_general_copyright_color %}
+        <sw-card
+        v-if="salesChannel"
+        position-identifier="sw-sales-channel-detail-base-general"
+        :is-loading="isLoading"
+        :title="$tc('sw-sales-channel-override.title.label')"
+        >
+            {% block sw_text_field %}
+
+                <sw-field
+                    v-if = 'footerText'
+                    v-model='footerText' 
+                    type="text"
+                    validation="required"
+                    :disabled="!acl.can('sales_channel.editor')"
+                    :placeholder="placeholder(salesChannel, 'name', $tc('sw-sales-channel.detail.placeholderName'))"
+                    :label="$tc('sw-sales-channel-override.text.label')"
+                />
+
+            {% endblock %}
+
+            {% block sw_sales_channel_detail_base_general_input_color_picker %}
+
+                    <sw-colorpicker
+                        v-if = 'footerColor'
+                        v-model="footerColor"
+                        value="#6ed59f"
+                        colorOutput="auto"
+                        :alpha="true"
+                        :disabled="false"
+                        :colorLabels="true"
+                        :label="$tc('sw-sales-channel-override.color.label')"
+                        />
+                        </sw-colorpicker>
+            {% endblock %}
+             
+
+        </sw-card>
+        {% endblock %}
+   {% parent %}
+{% endblock %} 

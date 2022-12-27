@@ -1,0 +1,13 @@
+{
+    "sw-sales-channel-override": {
+        "title":{
+            "label" : "CopyRight Text and Color"
+        },
+        "text":{
+            "label": "Input Text"
+        },
+        "color":{
+            "label": "Input Color"
+        }
+    }
+}
